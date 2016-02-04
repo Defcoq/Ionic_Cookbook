@@ -1,0 +1,34 @@
+﻿<ion-view>
+    <ion-nav-buttons side="primary">
+        <button class="button button-positive"
+                ui-sref="step1" ng-click="reset()">
+            Start Over
+        </button>
+        <h1 class="title">Thank You</h1>
+    </ion-nav-buttons>
+    <ion-content>
+        <div class="list">
+            <div class="item" ng-if="data.firstname">
+                <b>First name:</b> {{ data.firstname }}
+            </div>
+            <div class="item" ng-if="data.middlename">
+                <b>Middle name:</b> {{ data.middlename }}
+            </div>
+            <div class="item" ng-if="data.lastname">
+                <b>Last name:</b> {{ data.lastname }}
+            </div>
+            <div class="item" ng-if="data.cell">
+                <b>Cell:</b> {{ data.cell }}
+            </div>
+            <div class="item" ng-if="data.email">
+                <b>Email:</b> {{ data.email }}
+            </div>
+            <div class="item" ng-if="data.comments">
+                <b>Comments:</b> {{ data.comments }}
+            </div>
+            <div class="item" ng-if="data.tos">
+                <b>Terms of Service:</b> {{ data.tos }}
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,40 @@
+﻿<ion-view>
+    <ion-nav-buttons side="primary">
+        <h1 class="title">Step 1</h1>
+        <button class="button button-positive"
+                ng-click="submit()" ui-sref="step2">
+            Next
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <form name="step1Form" ng-controller="Step1FormCtrl" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="text" placeholder="First Name"
+                           name="firstname" ng-model="data.firstname"
+                           required>
+                </label>
+                <div class="item item-message"
+                     ng-if="step1Submitted && step1Form.firstname.$error.required">
+                    First name is required
+                </div>
+
+                <label class="item item-input">
+                    <input type="text" placeholder="Middle Name"
+                           name="middlename" ng-model="data.middlename">
+                </label>
+                <label class="item item-input">
+                    <input type="text" placeholder="Last Name"
+                           name="lastname" ng-model="data.lastname"
+                           required>
+                </label>
+
+                <div class="item item-message"
+                     ng-if="step1Submitted && step1Form.lastname.$error.required">
+                    Last name is required
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
+

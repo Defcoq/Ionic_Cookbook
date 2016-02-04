@@ -1,0 +1,27 @@
+﻿<ion-view>
+    <ion-nav-buttons side="primary">
+        <h1 class="title">Step 2</h1>
+        <button class="button button-positive"
+                ng-click="submit()" ui-sref="step3">
+            Next
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <form name="step2Form" ng-controller="Step2FormCtrl" novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <input type="tel" placeholder="Cell phone"
+                           name="cell" ng-model="data.cell">
+                </label>
+                <label class="item item-input">
+                    <input type="email" placeholder="Email"
+                           name="email" ng-model="data.email">
+                </label>
+                <div class="item item-message"
+                     ng-if="step2Submitted && step2Form.email.$error.email">
+                    Email address is invalid
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

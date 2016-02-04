@@ -1,0 +1,32 @@
+﻿<ion-view>
+    <ion-nav-buttons side="primary">
+        <h1 class="title">Step 3</h1>
+        <button class="button button-positive"
+                ng-click="submit()" ui-sref="done">
+            Done
+        </button>
+    </ion-nav-buttons>
+    <ion-content>
+        <form name="step3Form" ng-controller="Step3FormCtrl"
+              novalidate>
+            <div class="list">
+                <label class="item item-input">
+                    <textarea placeholder="Comments"
+                              name="comments" ng-model="data.comments"
+                              rows=10></textarea>
+                </label>
+                <div class="item item-checkbox">
+                    <label class="checkbox">
+                        <input type="checkbox" name="tos"
+                               ng-model="data.tos" ng-click="checkTos()">
+                    </label>
+                    Agree to Terms of Service
+                </div>
+                <div class="item item-message"
+                     ng-if="step3Submitted && step3Form.tos.$error.agree">
+                    You must agree to Terms of Service
+                </div>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>
